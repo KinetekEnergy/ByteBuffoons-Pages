@@ -49,7 +49,7 @@ layout: base
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <li>
+      <li class="glow-on-hover">
         {%- if site.show_image -%}
             {%- include post_list_image_card.html -%}
         {% else %}

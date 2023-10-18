@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Font Family */
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Info bar */
+        .info-bar {
+            background-color: #555843;
+            width: 100%;
+            text-align: center;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-text {
+            font-weight: 600;
+            font-family: "Outfit";
+            color: white;
+            margin: 0;
+        }
+
+        /* NAVIGATION */
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .logo {
+            padding-left: 6rem;
+            font-weight: bold;
+            font-family: "Outfit";
+            font-size: 250%;
+        }
+
+        nav {
+            width: 100%;
+            list-style: none;
+            text-align: center;
+            top: 0;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+            background-color: white;
+                    }
+
+        .nav-div {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 85%;
+            text-decoration: none;
+            color: gray;
+            font-weight: 400;
+            font-family: "Outfit";
+            line-height: 0.8;
+            transition: text-decoration 0.2s;
+        }
+
+        /* Remove the hover effect to keep the links always gray */
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 25px;
+            font-size: 125%;
+        }
+
+        /* Cart Button Styling */
+        .cart-button {
+            background-color: #5272F2;
+            border: none;
+            border-radius: 5px;
+            color: white !important;
+            font-weight: bold;
+            font-size: 110%;
+            padding: 10px 20px;
+            margin-right: 3.5rem;
+            /* Adjust margin to position the Cart button */
+            cursor: pointer;
+        }
+
+        .active {
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: white;
+                z-index: 101;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-div {
+                position: relative;
+            }
+
+            .nav-button {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* CSS for mobile screens as previously discussed */
+        }
+
+        @media (min-width: 769px) {
+            .menu-button {
+                display: none;
+            }
+
+            /* New styles for the hero section */
+            .hero-section {
+                background-image: url('../images/plate-with-fresh-cookies-from-oven.jpg');
+                /* Add your image path here */
+                background-size: cover;
+                background-position: center;
+                height: 35rem;
+                /* 35% of the viewport height */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                flex-direction: column;
+            }
+
+            .hero-text {
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 20px;
+                font-weight: 800;
+                /* Space between text and button */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Center the button under the text */
+            }
+
+            a.learn-more-button {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+                text-decoration: none;
+
+                background-color: #5272F2;
+                /* Button background color */
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px; /* Adjust the top margin as needed */
+            }
+
+            .next-section {
+                background-color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .next-section h2 {
+                font-size: 36px;
+                /* Adjust the font size as needed */
+                font-weight: bold;
+            }
+
+            .slogan {
+                font-size: 24px;
+                /* Adjust the font size as needed */
+                margin-top: 20px;
+                /* Space between heading and slogan */
+            }
+
+        }
+
+        .best-sellers {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .best-sellers h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: calc(25% - 20px);
+            padding: 20px;
+            margin: 10px;
+            background-color: #D0D4CA;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 16px;
+        }
+
+        .new-hero-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            /* Background color for the section */
+            text-align: center;
+        }
+
+        .new-hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .new-hero-image {
+            flex: 1;
+            padding: 20px;
+            /* Add padding to the image */
+            text-align: center;
+        }
+
+        .new-hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .new-hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .new-hero-text h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .new-hero-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .transparent-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .new-hero-section {
+            background-image: url('../images/plate-with-fresh-cookies-from-oven.jpg');
+            /* Add your image path here */
+            background-size: cover;
+            background-position: center;
+            height: 35rem;
+            /* 35% of the viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 15;
+        }
+
+        .new-hero-text {
+            text-align: center;
+            font-size: 36px;
+            /* Adjust the font size as needed */
+        }
+
+        .transparent-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="info bar">
+        <div class="info-bar">
+            <p class="info-text">
+                50% Off Only Today!
+            </p>
+        </div>
+    </section>
+
+    <nav>
+        <div class="nav-div">
+            <h1 class="logo">Chrissie's</h1>
+            <!--             <button class="nav-button" onclick="toggleNavLinks()">☰</button> -->
+            <ul class="nav-links">
+                <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
+                <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
+                <li><a href="#" class="cart cart-button">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="Hero">
+
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Crave, Click, Enjoy.</h1>
+                <p>Chrissie's Cookies</p>
+            </div>
+            <a href="{{site.baseurl}}/catalog/" class="learn-more-button">Buy Now</a>
+        </div>
+    </section>
+
+    <section class="next-section">
+        <h2 class="slogan">Our Story</h2>
+        <p class="slogan">
+            It all started with one big dream, five teens, and the perfect combination of flour, sugar,
+            and chocolate chips. Chrissie's Cookies was co-founded by Aashray, Arushi, Chrissie, Harkirat,
+            and Shubhay. They teamed up and dove head-first into the world of baking. After thousands
+            in wasted dough, recipes that did not live up to their expetations, and cookies that are just
+            plain embarrassing to them today, the five teens decided to take their 'perfect cookie quest'
+            to the people. They gathered feedback and tested recipes -- a practice that is part of the
+            process -- until they created the world's best chocolate chip cookie
+        </p>
+    </section>
+
+
+    <!-- Best Sellers Section -->
+    <!-- <section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="card-container"> -->
+    <!-- Card 1 -->
+    <!-- <div class="card">
+            <img src="product-image-1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1</p>
+        </div> -->
+
+    <!-- Card 2 -->
+    <!-- <div class="card">
+            <img src="product-image-2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2</p>
+        </div> -->
+
+    <!-- Card 3 -->
+    <!-- <div class="card">
+            <img src="product-image-3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Description of Product 3</p>
+        </div>
+
+    </div>
+</section> -->
+    <!-- <section class="new-hero-section">
+    <div class="new-hero-text" style="margin-top: 10rem;">
+        <h1>Lorem Ipsum </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+        <button class="transparent-button">Buy Now</button>
+    </div>
+</section>
+
+<section class="next-section">
+    <h2 class="slogan">Try Them Out</h2>
+    <p class="slogan">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</p>
+</section>
+
+<section style="width: 100%; height: 30%;">
+    <div class="div" style="opacity: 0;">
+        <h1>xdcfghvbjknbhgvcfdrcfghvbjknbhgtresvgbhnjmkjhgytdrestyuhigtresrdtfyguftdryesyfguhsxdcfvgbhjngfdresrdrfgbnuygftdreswerctvbnbtreswawsedrftgyhugftdsa2sedrftgyhugfdsasedrftgyhujiuhgyftrdeswasedrftgyhujihugfdesw2sdfghjkjhgfdswasedrftgyuhijohugyftdreswedrftgyhujikoijhugytdreswedrtgyhjkm,kjhuytrestghjko,k</h1>
+    </div>
+</section>
+
+
+    <script>
+        function toggleNavLinks() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script> -->
+</body>
+
+</html>

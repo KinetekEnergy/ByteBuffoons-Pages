@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* NAVIGATION */
+
+        .info-bar {
+            background-color: #555843;
+            width: 100%;
+            text-align: center;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .info-text {
+            font-weight: 600;
+            font-family: "Outfit";
+            color: white;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            margin-top: 0;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        nav {
+            width: 100%;
+            list-style: none;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 10px;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+            background-color: white;
+        }
+
+        .nav-div {
+            display: flex; 
+            align-items: center;
+        }
+        
+        .nav-links a {
+            font-size: 85%;
+            text-decoration: none;
+            color: gray;
+            font-weight: 400;
+            font-family: "Outfit";
+            line-height: 0.8;
+            transition: text-decoration 0.2s;
+        }
+        
+        /* Remove the hover effect to keep the links always gray */
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-links li {
+            display: inline-block;
+            margin-left: 25px;
+            font-size: 125%;
+        }
+
+        .cart {
+            background-color: #5876c3;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .active {
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+        /* Catalog text */
+        h1 {
+            font-family: 'Newsreader', sans-serif;
+            font-size: 500%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* the divider */
+        hr {
+            color: #E6E6E6;
+        }
+
+        /* filter buttons*/
+        a.chip {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            text-decoration: none;
+            font-family: 'Inter', serif;
+            font-weight: bolder;
+            color: black;
+            padding: 10px 15px;
+
+            border: 1px solid #C2C2C2;
+            border-radius: 20px;
+
+            margin-left: auto;
+            margin-left: 5px;
+        }
+
+        .chipActive {
+            color: white !important;
+            background-color: #426B1F;
+        }
+
+        /* making the catalog text & filter button aligned */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .left {
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            margin-bottom: -0.3em;
+        }
+
+        .right {
+            text-align: right;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chipContainer {
+            margin-left: auto;
+        }
+
+        /* catalog items */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns */
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 2rem;
+        }
+
+        .card {
+            background-color: #FAFAF5;
+            border: 1px solid #E6E6E6;
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 200px;
+            position: relative;
+            width: 100%;
+            /* Ensure the card takes up the full width of its container */
+        }
+
+        .card img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 20px;
+            text-align: right;
+        }
+
+        .title {
+            font-family: 'Inter', serif;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+
+        .price {
+            font-family: 'Inter', serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #426B1F;
+        }
+        .logo {
+            padding-left: 6rem;
+            font-weight: bold;
+            font-family: "Outfit";
+            font-size: 250%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="info bar">
+        <div class="info-bar">
+            <p class="info-text">
+                50% Off Only Today!
+            </p>
+        </div>
+    </section>
+    
+    
+    <nav>
+        <div class="nav-div">
+            <h1 class="logo">Chrissie's</h1>
+            <ul class="nav-links">
+                <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
+                <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
+                <li><a href="{{site.baseurl}}/cart" class="cart cart-button">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- catalog text & filters -->
+    <div class="container">
+        <h1 class="left">Cart</h1>
+    </div>
+    <hr style="margin-bottom: 2%; margin-top: 2%;">
+
+    <!-- items -->
+    <div class="grid">
+        <!-- Chocolate chip -->
+        <div class="card" style="grid-column: 1; grid-row: 1;">
+            <img src="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Chocolate Chip</p>
+                <p class="price">$3.99</p>
+            </div>
+        </div>
+
+        <!-- Double chocolate -->
+        <div class="card" style="grid-column: 1; grid-row: 2;">
+            <img src="https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Double Chocolate Chip</p>
+                <p class="price">$4.99</p>
+            </div>
+        </div>
+
+        <!-- Snickerdoodle -->
+        <div class="card" style="grid-column: 1; grid-row: 3;">
+            <img src="https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Snickerdoodle</p>
+                <p class="price">$6.99</p>
+            </div>
+        </div>
+
+        <span class="snipcart-items-count"></span>
+        <span class="snipcart-total-price"></span>
+    </div>
+</body>
+
+<script>
+    window.SnipcartSettings = {
+        publicApiKey: 'NzFjYjkzMDAtMzFmYy00NThhLTg2YTktNjgwN2ExYTJmMzk5NjM4MzMwMzQyMjk0MTIzNDU1',
+        loadStrategy: 'on-user-interaction',
+            templatesUrl: "/snipcart-templates.html",
+    };
+
+    (() => { var c, d; (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0"); var s, S; (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750); var l, p; (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com"); var w, u; (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https"); var f = window.SnipcartSettings.version.includes("v3.0.0-ci") || window.SnipcartSettings.version != "3.0" && window.SnipcartSettings.version.localeCompare("3.4.0", void 0, { numeric: !0, sensitivity: "base" }) === -1, m = ["focus", "mouseover", "touchmove", "scroll", "keydown"]; window.LoadSnipcart = o; document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r(); function r() { window.SnipcartSettings.loadStrategy ? window.SnipcartSettings.loadStrategy === "on-user-interaction" && (m.forEach(t => document.addEventListener(t, o)), setTimeout(o, window.SnipcartSettings.timeoutDuration)) : o() } var a = !1; function o() { if (a) return; a = !0; let t = document.getElementsByTagName("head")[0], e = document.querySelector("#snipcart"), i = document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`), n = document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`); e || (e = document.createElement("div"), e.id = "snipcart", e.setAttribute("hidden", "true"), document.body.appendChild(e)), v(e), i || (i = document.createElement("script"), i.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`, i.async = !0, t.appendChild(i)), n || (n = document.createElement("link"), n.rel = "stylesheet", n.type = "text/css", n.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`, t.prepend(n)), m.forEach(g => document.removeEventListener(g, o)) } function v(t) { !f || (t.dataset.apiKey = window.SnipcartSettings.publicApiKey, window.SnipcartSettings.addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings.addProductBehavior), window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle), window.SnipcartSettings.currency && (t.dataset.currency = window.SnipcartSettings.currency), window.SnipcartSettings.templatesUrl && (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl)) } })();
+</script>
+
+</html>
