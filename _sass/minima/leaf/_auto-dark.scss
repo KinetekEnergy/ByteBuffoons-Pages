@@ -1,10 +1,118 @@
+$high-emph: rgba(white, 0.87);
+$med-emph: rgba(white, 0.69); 
+$low-emph: rgba(white, 0.38);
+$dark-grey : #121212; 
+// $dark-grey : #1F1B24;
+$overlay: mix($dark-grey, white, 95%);
+$overlay-light: mix($dark-grey, white, 86%);
+
+html, body, input, textarea, select, button {   
+  color: $high-emph !important;
+  background-color: $dark-grey !important;
+}
+
+a {
+    color: rgb(75, 186, 255) !important;
+}
+
+a:hover {
+    color:$high-emph !important;
+}
+
+.site-title, .site-title:visited, .site-nav, .page-link {
+    color: $high-emph !important;
+}
+
+.site-nav {
+    background-color: $dark-grey;
+    border-color: $overlay-light;
+}
+
+* {
+    scrollbar-color: $dark-grey $overlay-light;
+}
+
+pre, code {
+    // BVas a lighter colour to better highlight short code words
+    border-color: $overlay-light;
+    background-color: $overlay;
+    color:white;
+}
+
+.page-description {
+    color: $med-emph;
+}
+
+.post-meta {
+    color: $low-emph;
+}
+
+.post-content p, .post-content li {
+    color: $med-emph;
+}
+
+.btn {
+    background-color: $overlay !important;
+    color: $high-emph !important;
+    border-color: $overlay-light !important;
+}
+
+.btn:hover {
+    background-color: $dark-grey !important;
+}
+
+table th{
+    background-color: $overlay;
+    border-color: $overlay-light;
+    color: $high-emph;
+}
+
+table td{
+    background-color: $dark-grey;
+    border-color: $overlay-light;
+    color: $med-emph;
+}
+
+.flash {
+    color: $dark-grey !important;
+    filter: brightness(80%);
+}
+
+canvas {
+    filter: invert(100%);
+}
+
+.post-list > li > div {
+    box-shadow: none !important;
+    background-color: $overlay;
+    border: none !important;
+}
+
+li .post-meta-description {
+    color: $med-emph !important;
+}
+
+.search-result-preview{
+    color: lightgray !important; 
+}
+
+.search-result-highlight {
+    color:yellow !important;
+    font-weight:bold !important;
+}
+
+.search-results-list-item .search-result-title {
+    color: cornflowerblue !important;
+}
+
+
 // Override Syntax Highlighting In Minima With the Dracula Theme: https://draculatheme.com/
 // If you wish to override any of this CSS, do so in _sass/minima/custom-styles.css
  
 $dt-gray-dark: #282a36;  // Background
-$dt-code-cell-background: #323443;
-$dt-gray: #44475a;       // Current Line & Selection
-$dt-gray-light: #f8f8f2; // Foreground
+$dt-code-cell-background: #272726;
+$dt-gray: white;       // Current Line & Selection
+$dt-gray-light: aliceblue; // Foreground
 $dt-blue: #6272a4;       // Comment
 $dt-cyan: #8be9fd;
 $dt-green: #50fa7b;
@@ -35,8 +143,8 @@ $dt-green-light: rgb(172, 229, 145);
 .input_area pre, .input_area div {
     margin-bottom:1.0rem !important;
     margin-top:1.5rem !important;
-    padding-bottom:0 !important;
-    padding-top:0 !important;
+    padding-bottom:1rem !important;
+    padding-top:1rem !important;
     background: #323443 !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -46,9 +154,9 @@ $dt-green-light: rgb(172, 229, 145);
 }
 .output_area pre, .output_area div {
     margin-bottom:1rem !important;
-    margin-top:0rem !important;
-    padding-bottom:0 !important;
-    padding-top:0 !important;
+    margin-top:1rem !important;
+    padding-bottom:1rem !important;
+    padding-top:1rem !important;
 }
 .input_area pre {
     border-left: 1px solid lightcoral;
