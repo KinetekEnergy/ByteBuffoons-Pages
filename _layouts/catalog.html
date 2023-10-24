@@ -319,21 +319,22 @@
 
         const catalogGrid = document.getElementById("catalog-grid");
     
-        function createProductCard(title, price) {
-          return `
-            <div class="product-card">
-              <div class="product-title">${title}</div>
-              <div class="product-price">$${price}</div>
-            </div>
-          `;
-        }
-    
-        const productContainer = document.getElementById("product-container");
-    
-        products.forEach(product => {
-          const card = createProductCard(product.title, product.price);
-          productContainer.innerHTML += card;
-        });
+        catalogData.forEach((item) =>{
+            const card = document.createElement("div")
+            card.className = "card";
+            
+            const image = document.createElement("img");
+            imagesrc=""
+            imagealt=""
+
+            const cardContent = document.createElement("div")
+            cardContentclassname = ""
+
+            const title = document.createElement("p");
+
+            const chip = document.createElement("a");
+
+        })
       </script>
     </body>
     </html>
