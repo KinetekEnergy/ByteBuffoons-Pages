@@ -245,6 +245,26 @@
             font-family: "Outfit";
             font-size: 250%;
         }
+
+        .product-card {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px;
+          width: 200px;
+          display: inline-block;
+          text-align: center;
+          background-color: #f8f8f8;
+        }
+    
+        .product-title {
+          font-size: 1.2em;
+        }
+    
+        .product-price {
+          font-weight: bold;
+          color: #007bff;
+        }
     </style>
 </head>
 
@@ -276,46 +296,35 @@
 
     <hr style="margin-bottom: 2%; margin-top: 2%;">
 
-    <!-- items -->
-    <div class="grid">
-        <!-- Chocolate chip -->
-        <div class="card">
-            <img src="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Chocolate Chip - $3.99</p>
-                <p></p>
-                <a href="#" class="chip snipcart-add-item" data-item-id="Chocolate Chip" data-item-price="3.99"
-                    data-item-image="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
-                    data-item-name="Chocolate Chip">Add to cart</a>
-                <p></p>
+      <div id="product-container"></div>
+    
+      <script>
+        const products = [
+          { title: "Product 1", price: 19.99 },
+          { title: "Product 2", price: 29.99 },
+          { title: "Product 3", price: 39.99 },
+          // Add more products here
+        ];
+    
+        function createProductCard(title, price) {
+          return `
+            <div class="product-card">
+              <div class="product-title">${title}</div>
+              <div class="product-price">$${price}</div>
             </div>
-        </div>
-
-        <!-- Double chocolate -->
-        <div class="card">
-            <img src="https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Double Chocolate Chip - $4.99</p>
-                <p></p>
-                <a href="#" class="chip">Add to cart</a>
-                <p></p>
-            </div>
-        </div>
-
-        <!-- Snickerdoodle -->
-        <div class="card">
-            <img src="https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Snickerdoodle - $6.99</p>
-                <p></p>
-                <a href="#" class="chip">Add to cart</a>
-                <p></p>
-            </div>
-        </div>
-    </div>
+          `;
+        }
+    
+        const productContainer = document.getElementById("product-container");
+    
+        products.forEach(product => {
+          const card = createProductCard(product.title, product.price);
+          productContainer.innerHTML += card;
+        });
+      </script>
+    </body>
+    </html>
+    
 </body>
 
 <script>
