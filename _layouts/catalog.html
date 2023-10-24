@@ -324,15 +324,25 @@
             card.className = "card";
             
             const image = document.createElement("img");
-            imagesrc=""
-            imagealt=""
+            image.src = item.image;
+            image.alt = "cookie";
 
             const cardContent = document.createElement("div")
-            cardContentclassname = ""
+            cardContent.className = "card-content";
 
             const title = document.createElement("p");
+            title.className = "title";
+            title.textContent = `${item.name} - $${item.price}`
+
 
             const chip = document.createElement("a");
+            chip.className = "chip";
+            chip.textContent = "Add to Cart";
+            chip.href = "#";
+            chip.addEventListener("click", () => {
+            //    Cart Logic
+            });
+
 
         })
       </script>
