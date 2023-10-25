@@ -136,23 +136,23 @@
   <title>Cookie Customization</title>
 </head>
 <body>
-
   <nav>
     <div class="nav-div">
-        <h1 class="logo">Chrissie's</h1>
-        <ul class="nav-links">
-            <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
-            <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
-            <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
-            <!-- {{site.baseurl}}/cart -->
-        </ul>
+      <h1 class="logo">Chrissie's</h1>
+      <ul class="nav-links">
+        <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
+        <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
+        <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
   <h1>Cookie Customization</h1>
 
   <div id="cookie-container">
-    <div id="cookie"></div>
+    <div>
+      <img id="cookie-image" src="https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=" />
+    </div>
   </div>
 
   <div id="base-options">
@@ -179,32 +179,30 @@
     function swapOptions() {
       const baseSelect = document.getElementById('base');
       const toppingSelect = document.getElementById('topping');
-      const cookieDiv = document.getElementById('cookie');
+      const cookieImage = document.getElementById('cookie-image');
 
       // Swap base and topping options
       const temp = baseSelect.value;
       baseSelect.value = toppingSelect.value;
       toppingSelect.value = temp;
 
-      // Update cookie appearance
-      cookieDiv.style.backgroundColor = getBaseColor();
+      // Update cookie image source
+      const base = baseSelect.value;
+      const newImageUrl = getCookieImageURL(base);
+      cookieImage.src = newImageUrl;
     }
 
-    function getBaseColor() {
-      const baseSelect = document.getElementById('base');
+    function getCookieImageURL(base) {
+      // Define image URLs based on the selected base
+      const imageUrls = {
+        'chocolate': 'https://www.justsotasty.com/wp-content/uploads/2016/03/Chocolate-Cookie-for-One-12-500x375.jpg',
+        'vanilla': 'https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=',
+        'strawberry': 'https://sugarspunrun.com/wp-content/uploads/2023/05/Strawberry-Cookies-8-of-8.jpg',
+      };
 
-      switch (baseSelect.value) {
-        case 'chocolate':
-          return '#7b3d00';
-        case 'vanilla':
-          return '#f5e0ba';
-        case 'strawberry':
-          return '#ff7e99';
-        default:
-          return '#e1b382';
-      }
+      // Return the corresponding image URL
+      return imageUrls[base] || 'default_image_url.jpg';
     }
   </script>
-
 </body>
 </html>

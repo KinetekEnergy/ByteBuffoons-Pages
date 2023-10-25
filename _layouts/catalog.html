@@ -286,7 +286,7 @@
                 <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
                 <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
                 <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
-                <!-- {{site.baseurl}}/cart -->
+                <li><a href="{{site.baseurl}}_layouts/cookiemaker.html">Cookie Maker</a></li>
             </ul>
         </div>
     </nav>
@@ -299,39 +299,118 @@
 
     <script>
 
-        const catalogData = [
-            {
-                name: "Chocolate Chip",
-                price: 3.99,
-                image: "https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg",
-            },
-            {
-                name: "Double Chocolate Chip",
-                price: 4.99,
-                image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Double Chocolate Chip",
-                price: 4.99,
-                image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
-            },
+const catalogData = [
+    {
+        name: "Chocolate Chip",
+        price: 3.99,
+        image: "https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg",
+    },
+    {
+        name: "Double Chocolate Chip",
+        price: 4.99,
+        image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
+    },
+    {
+        name: "Snickerdoodle",
+        price: 6.99,
+        image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
+    },
+    {
+        name: "Chocolate Chip",
+        price: 3.99,
+        image: "https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg",
+    },
+    {
+        name: "Double Chocolate Chip",
+        price: 4.99,
+        image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
+    },
+    {
+        name: "Snickerdoodle",
+        price: 6.99,
+        image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
+    },
+    // {
+    //     name: "Oatmeal Raisin",
+    //     price: 5.49,
+    //     image: "https://example.com/oatmeal-raisin.jpg",
+    // },
+    // {
+    //     name: "Peanut Butter",
+    //     price: 4.79,
+    //     image: "https://example.com/peanut-butter.jpg",
+    // },
+    // {
+    //     name: "Macadamia Nut",
+    //     price: 7.99,
+    //     image: "https://example.com/macadamia-nut.jpg",
+    // },
+    // // Add more cookies here
+    // // Continue adding unique types of cookies
+    // {
+    //     name: "Sugar Cookie",
+    //     price: 3.29,
+    //     image: "https://example.com/sugar-cookie.jpg",
+    // },
+    // {
+    //     name: "Gingerbread",
+    //     price: 4.49,
+    //     image: "https://example.com/gingerbread-cookie.jpg",
+    // },
+    // {
+    //     name: "Molasses",
+    //     price: 5.99,
+    //     image: "https://example.com/molasses-cookie.jpg",
+    // },
+    // {
+    //     name: "Shortbread",
+    //     price: 6.49,
+    //     image: "https://example.com/shortbread-cookie.jpg",
+    // },
+    // {
+    //     name: "Lemon Cookie",
+    //     price: 3.79,
+    //     image: "https://example.com/lemon-cookie.jpg",
+    // },
+    // {
+    //     name: "Almond Biscotti",
+    //     price: 4.99,
+    //     image: "https://example.com/almond-biscotti.jpg",
+    // },
+    // {
+    //     name: "Pistachio Cookie",
+    //     price: 5.29,
+    //     image: "https://example.com/pistachio-cookie.jpg",
+    // },
+    // {
+    //     name: "Coconut Macaroon",
+    //     price: 4.19,
+    //     image: "https://example.com/coconut-macaroon.jpg",
+    // },
+    // {
+    //     name: "Oreo Cheesecake Cookie",
+    //     price: 7.49,
+    //     image: "https://example.com/oreo-cheesecake-cookie.jpg",
+    // },
+    // {
+    //     name: "Red Velvet Cookie",
+    //     price: 4.99,
+    //     image: "https://example.com/red-velvet-cookie.jpg",
+    // },
+    // {
+    //     name: "Pumpkin Spice Cookie",
+    //     price: 4.79,
+    //     image: "https://example.com/pumpkin-spice-cookie.jpg",
+    // },
+    // {
+    //     name: "White Chocolate Macadamia Nut",
+    //     price: 6.79,
+    //     image: "https://example.com/white-chocolate-macadamia-nut.jpg",
+    // }
+];
 
-        ];
+
+
 
         const cartState = {};
 
@@ -384,8 +463,6 @@
             catalogGrid.appendChild(card);
 
         })
-
-
 
     </script>
 </body>
