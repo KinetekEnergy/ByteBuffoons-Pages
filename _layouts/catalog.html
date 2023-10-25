@@ -36,7 +36,7 @@
             justify-content: space-between;
             z-index: 100;
             background-color: white;
-                    }
+        }
 
         .nav-div {
             display: flex;
@@ -247,23 +247,23 @@
         }
 
         .product-card {
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          padding: 10px;
-          margin: 10px;
-          width: 200px;
-          display: inline-block;
-          text-align: center;
-          background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            background-color: #f8f8f8;
         }
-    
+
         .product-title {
-          font-size: 1.2em;
+            font-size: 1.2em;
         }
-    
+
         .product-price {
-          font-weight: bold;
-          color: #007bff;
+            font-weight: bold;
+            color: #007bff;
         }
     </style>
 </head>
@@ -282,7 +282,6 @@
     <nav>
         <div class="nav-div">
             <h1 class="logo">Chrissie's</h1>
-            <!--             <button class="nav-button" onclick="toggleNavLinks()">☰</button> -->
             <ul class="nav-links">
                 <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
                 <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
@@ -298,7 +297,7 @@
 
     <div class="grid" id="catalog-grid"></div>
 
-      <script>
+    <script>
 
         const catalogData = [
             {
@@ -340,10 +339,10 @@
 
         const catalogGrid = document.getElementById("catalog-grid");
 
-        catalogData.forEach((item) =>{
+        catalogData.forEach((item) => {
             const card = document.createElement("div")
             card.className = "card";
-            
+
             const image = document.createElement("img");
             image.src = item.image;
             image.alt = "cookie";
@@ -374,13 +373,14 @@
             catalogGrid.appendChild(card);
 
         })
-        
-        
 
-      </script>
-    </body>
-    </html>
-    
+
+
+    </script>
+</body>
+
+</html>
+
 </body>
 
 <script>
