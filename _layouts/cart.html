@@ -371,7 +371,12 @@
 </body>
 
 <script>
-    window.SnipcartSettings = {
+   import cartState from "_layouts/catalog.html"
+
+
+    console.log(cartState)
+
+   window.SnipcartSettings = {
         publicApiKey: 'NzFjYjkzMDAtMzFmYy00NThhLTg2YTktNjgwN2ExYTJmMzk5NjM4MzMwMzQyMjk0MTIzNDU1',
         loadStrategy: 'on-user-interaction',
             templatesUrl: "/snipcart-templates.html",
