@@ -353,6 +353,10 @@
             const title = document.createElement("p");
             title.className = "title";
             title.textContent = `${item.name} - $${item.price}`
+            
+            const whitespace = document.createElement("p");
+            whitespace.className = "title";
+            whitespace.textContent = ''
 
 
             const chip = document.createElement("a");
@@ -364,8 +368,15 @@
                 console.log(cartState)
             });
 
+            const whitespace2 = document.createElement("p");
+            whitespace2.className = "title";
+            whitespace2.textContent = ''
+
             cardContent.appendChild(title);
+            cardContent.appendChild(whitespace)
+
             cardContent.appendChild(chip);
+            cardContent.appendChild(whitespace2)
 
             card.appendChild(image);
             card.appendChild(cardContent);
