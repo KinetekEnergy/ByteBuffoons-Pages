@@ -1,7 +1,7 @@
-{% if include.content contains  "<code>" %}
+{% if include.content contains "<code>" %}
     {% assign url = include.content | remove: "<code>" | remove: "</code>" %}
 {% else %}
-    {% assign url = include.content | remove: "</a>" | split: ">" | last %}
+{% assign url = include.content | remove: "</a>" | split: ">" | last %}
 {% endif %}
 <center>
     {% twitter url %}
