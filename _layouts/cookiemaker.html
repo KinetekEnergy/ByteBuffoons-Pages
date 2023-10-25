@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Newsreader">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .logo {
+            padding-left: 6rem;
+            font-weight: bold;
+            font-family: "Outfit";
+            font-size: 250%;
+        }
+
+        nav {
+            width: 100%;
+            list-style: none;
+            text-align: center;
+            top: 0;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+            background-color: white;
+        }
+
+        .nav-div {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 85%;
+            text-decoration: none;
+            color: gray;
+            font-weight: 400;
+            font-family: "Outfit";
+            line-height: 0.8;
+            transition: text-decoration 0.2s;
+        }
+
+        /* Remove the hover effect to keep the links always gray */
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 25px;
+            font-size: 125%;
+        }
+
+        /* Cart Button Styling */
+        .cart-button {
+            background-color: #5272F2;
+            border: none;
+            border-radius: 5px;
+            color: white !important;
+            font-weight: bold;
+            font-size: 110%;
+            padding: 10px 20px;
+            margin-right: 3.5rem;
+            /* Adjust margin to position the Cart button */
+            cursor: pointer;
+        }
+
+        .active {
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: white;
+                z-index: 101;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-div {
+                position: relative;
+            }
+
+            .nav-button {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        #cookie-container {
+            margin-top: 50px;
+        }
+
+        #cookie {
+            width: 200px;
+            height: 200px;
+            background-color: #E1B382;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+        }
+
+        #base-options,
+        #topping-options {
+            margin-top: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #swap-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Cookie Customization</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-div">
+            <h1 class="logo">Chrissie's</h1>
+            <ul class="nav-links">
+                <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
+                <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
+                <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Cookie Customization</h1>
+    <div id="cookie-container">
+        <div>
+            <img id="cookie-image"
+                src="https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=" />
+        </div>
+    </div>
+    <div id="base-options">
+        <label for="base">Choose Base:</label>
+        <select id="base">
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="strawberry">Strawberry</option>
+        </select>
+    </div>
+    <div id="topping-options">
+        <label for="topping">Choose Topping:</label>
+        <select id="topping">
+            <option value="sprinkles">Sprinkles</option>
+            <option value="chocolate-chips">Chocolate Chips</option>
+            <option value="nuts">Nuts</option>
+        </select>
+    </div>
+    <button id="swap-button" onclick="swapOptions()">Swap Options</button>
+    <script>
+    function swapOptions() {
+      const baseSelect = document.getElementById('base');
+      const toppingSelect = document.getElementById('topping');
+      const cookieImage = document.getElementById('cookie-image');
+      // Swap base and topping options
+      const temp = baseSelect.value;
+      baseSelect.value = toppingSelect.value;
+      toppingSelect.value = temp;
+      // Update cookie image source
+      const base = baseSelect.value;
+      const newImageUrl = getCookieImageURL(base);
+      cookieImage.src = newImageUrl;
+    }
+    function getCookieImageURL(base) {
+      // Define image URLs based on the selected base
+      const imageUrls = {
+        'chocolate': 'https://www.justsotasty.com/wp-content/uploads/2016/03/Chocolate-Cookie-for-One-12-500x375.jpg',
+        'vanilla': 'https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=',
+        'strawberry': 'https://sugarspunrun.com/wp-content/uploads/2023/05/Strawberry-Cookies-8-of-8.jpg',
+      };
+      // Return the corresponding image URL
+      return imageUrls[base] || 'default_image_url.jpg';
+    }
+    </script>
+</body>
+
+</html>

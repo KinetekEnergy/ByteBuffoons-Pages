@@ -336,7 +336,7 @@
                 // Now, you have the organized data in the "organizedData" dictionary
                 Data = organizedData.Cookie_api.CookieAPI.get.data; //data[id].Cookie_name, image whatever u may need,
                 const catalogGrid = document.getElementById("catalog-grid");
-
+                const cartState={}
                 Data.forEach((item) => {
                     const card = document.createElement("div")
                     card.className = "card";
@@ -362,10 +362,9 @@
                     chip.className = "chip";
                     chip.textContent = "Add to Cart";
                     chip.addEventListener("click", () => {
-                        // <a href="#" class="chip snipcart-add-item" data-item-id="Chocolate Chip" data-item-price="3.99"
-                        //     data-item-image="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
-                        //     data-item-name="Chocolate Chip">Add to cart
-                        // </a>
+                        const productId = data[1].Cookie_name;
+                        cartState[productId] = (cartState[productId] || 0) + 1
+                        console.log(cartState)
                     });
 
                     // new line

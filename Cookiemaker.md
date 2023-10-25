@@ -1,5 +1,5 @@
 ---
-layout: cookiermaker
+layout: cookiemaker
 title: Cookie Maker
 permalink: /cookiemaker/
 ---
