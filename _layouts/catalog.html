@@ -332,44 +332,10 @@
                     };
 
             // Now, you have the organized data in the "organizedData" dictionary
-            console.log(organizedData.Cookie_api.CookieAPI.get.data); //data[id].Cookie_name, image whatever u may need,
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-        //delete this 
-        const catalogData = [
-            {
-                name: "Chocolate Chip",
-                price: 3.99,
-                image: "https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg",
-            },
-            {
-                name: "Double Chocolate Chip",
-                price: 4.99,
-                image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-
-        ];
-
+            Data = organizedData.Cookie_api.CookieAPI.get.data; //data[id].Cookie_name, image whatever u may need,
         const catalogGrid = document.getElementById("catalog-grid");
 
-        catalogData.forEach((item) => {
+        Data.forEach((item) => {
             const card = document.createElement("div")
             card.className = "card";
 
@@ -382,7 +348,7 @@
 
             const title = document.createElement("p");
             title.className = "title";
-            title.textContent = `${item.name} - $${item.price}`
+            title.textContent = `${item.Cookie_name} - $${item.price}`
 
 
             // new line
@@ -417,6 +383,12 @@
             catalogGrid.appendChild(card);
 
         })
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+        //delete this 
+       
     </script>
 </body>
 
