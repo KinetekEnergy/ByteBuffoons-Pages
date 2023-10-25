@@ -328,11 +328,9 @@
 
         ];
 
-        const Cart_States = [
-            {
-                name: ""
-            }
-        ]
+        const cartState = {};
+
+        const Cart_States = [];
 
         const catalogGrid = document.getElementById("catalog-grid");
     
@@ -356,7 +354,9 @@
             chip.className = "chip";
             chip.textContent = "Add to Cart";
             chip.addEventListener("click", () => {
-                console.log(item.name)
+                const productId = item.name;
+                cartState[productId] = (cartState[productId] || 0) + 1;
+                console.log(cartState)
             });
 
             cardContent.appendChild(title);
