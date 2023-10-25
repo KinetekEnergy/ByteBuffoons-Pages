@@ -302,7 +302,7 @@
     <script>
         const apiUrl = 'https://bytebufoons.stu.nighthawkcodingsociety.com/api/Cookie/'; // Replace with the actual API URL
 
-            // Make an HTTP GET request to the API
+        // Make an HTTP GET request to the API
         fetch(apiUrl)
             .then(response => response.json()) // Parse the JSON response
             .then(data => {
@@ -329,66 +329,66 @@
                             },
                         },
                     },
-                    };
+                };
 
-            // Now, you have the organized data in the "organizedData" dictionary
-            Data = organizedData.Cookie_api.CookieAPI.get.data; //data[id].Cookie_name, image whatever u may need,
-        const catalogGrid = document.getElementById("catalog-grid");
+                // Now, you have the organized data in the "organizedData" dictionary
+                Data = organizedData.Cookie_api.CookieAPI.get.data; //data[id].Cookie_name, image whatever u may need,
+                const catalogGrid = document.getElementById("catalog-grid");
 
-        Data.forEach((item) => {
-            const card = document.createElement("div")
-            card.className = "card";
+                Data.forEach((item) => {
+                    const card = document.createElement("div")
+                    card.className = "card";
 
-            const image = document.createElement("img");
-            image.src = item.image;
-            image.alt = "cookie";
+                    const image = document.createElement("img");
+                    image.src = item.image;
+                    image.alt = "cookie";
 
-            const cardContent = document.createElement("div")
-            cardContent.className = "card-content";
+                    const cardContent = document.createElement("div")
+                    cardContent.className = "card-content";
 
-            const title = document.createElement("p");
-            title.className = "title";
-            title.textContent = `${item.Cookie_name} - $${item.price}`
+                    const title = document.createElement("p");
+                    title.className = "title";
+                    title.textContent = `${item.Cookie_name} - $${item.price}`
 
 
-            // new line
-            const whitespace1 = document.createElement("p");
-            whitespace1.className = "title";
-            whitespace1.textContent = ``
+                    // new line
+                    const whitespace1 = document.createElement("p");
+                    whitespace1.className = "title";
+                    whitespace1.textContent = ``
 
-            const chip = document.createElement("a");
-            chip.className = "chip";
-            chip.textContent = "Add to Cart";
-            chip.addEventListener("click", () => {
-                // <a href="#" class="chip snipcart-add-item" data-item-id="Chocolate Chip" data-item-price="3.99"
-                //     data-item-image="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
-                //     data-item-name="Chocolate Chip">Add to cart
-                // </a>
+                    const chip = document.createElement("a");
+                    chip.className = "chip";
+                    chip.textContent = "Add to Cart";
+                    chip.addEventListener("click", () => {
+                        // <a href="#" class="chip snipcart-add-item" data-item-id="Chocolate Chip" data-item-price="3.99"
+                        //     data-item-image="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
+                        //     data-item-name="Chocolate Chip">Add to cart
+                        // </a>
+                    });
+
+                    // new line
+                    const whitespace2 = document.createElement("p");
+                    whitespace2.className = "title";
+                    whitespace2.textContent = ``
+
+
+                    cardContent.appendChild(title);
+                    cardContent.appendChild(whitespace1)
+                    cardContent.appendChild(chip);
+                    cardContent.appendChild(whitespace2)
+
+                    card.appendChild(image);
+                    card.appendChild(cardContent);
+
+                    catalogGrid.appendChild(card);
+
+                })
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
             });
-
-            // new line
-            const whitespace2 = document.createElement("p");
-            whitespace2.className = "title";
-            whitespace2.textContent = ``
-
-
-            cardContent.appendChild(title);
-            cardContent.appendChild(whitespace1)
-            cardContent.appendChild(chip);
-            cardContent.appendChild(whitespace2)
-
-            card.appendChild(image);
-            card.appendChild(cardContent);
-
-            catalogGrid.appendChild(card);
-
-        })
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
         //delete this 
-       
+
     </script>
 </body>
 
