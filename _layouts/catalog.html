@@ -286,7 +286,7 @@
             <ul class="nav-links">
                 <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
                 <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
-                <li><a href="#" class="cart cart-button">Cart</a></li>
+                <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
                 <!-- {{site.baseurl}}/cart -->
             </ul>
         </div>
@@ -328,6 +328,12 @@
 
         ];
 
+        const Cart_States = [
+            {
+                name: ""
+            }
+        ]
+
         const catalogGrid = document.getElementById("catalog-grid");
     
         catalogData.forEach((item) =>{
@@ -350,7 +356,7 @@
             chip.className = "chip";
             chip.textContent = "Add to Cart";
             chip.addEventListener("click", () => {
-            //    Cart Logic
+                console.log(item.name)
             });
 
             cardContent.appendChild(title);
