@@ -55,8 +55,10 @@ catalogData.forEach((item) =>{
     chip.addEventListener("click", () => {
         const productId = item.name;
         cartState[productId] = (cartState[productId] || 0) + 1;
-        console.log(cartState)
-    });
+        console.log(cartState);
+        updateCart(); // Call the updateCart function after adding to the cart
+      });
+      
 
     cardContent.appendChild(title);
     cardContent.appendChild(chip);
