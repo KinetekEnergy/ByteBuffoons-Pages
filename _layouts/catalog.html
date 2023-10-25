@@ -245,26 +245,6 @@
             font-family: "Outfit";
             font-size: 250%;
         }
-
-        .product-card {
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          padding: 10px;
-          margin: 10px;
-          width: 200px;
-          display: inline-block;
-          text-align: center;
-          background-color: #f8f8f8;
-        }
-    
-        .product-title {
-          font-size: 1.2em;
-        }
-    
-        .product-price {
-          font-weight: bold;
-          color: #007bff;
-        }
     </style>
 </head>
 
@@ -296,76 +276,46 @@
 
     <hr style="margin-bottom: 2%; margin-top: 2%;">
 
-    <div class="grid" id="catalog-grid"></div>
+    <!-- items -->
+    <div class="grid">
+        <!-- Chocolate chip -->
+        <div class="card">
+            <img src="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Chocolate Chip - $3.99</p>
+                <p></p>
+                <a href="#" class="chip snipcart-add-item" data-item-id="Chocolate Chip" data-item-price="3.99"
+                    data-item-image="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
+                    data-item-name="Chocolate Chip">Add to cart</a>
+                <p></p>
+            </div>
+        </div>
 
-      <script>
-        const catalogData = [
-            {
-                name: "Chocolate Chip",
-                price: 3.99,
-                image: "https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg",
-            },
-            {
-                name: "Double Chocolate Chip",
-                price: 4.99,
-                image: "https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
-            {
-                name: "Snickerdoodle",
-                price: 6.99,
-                image: "https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg",
-            },
+        <!-- Double chocolate -->
+        <div class="card">
+            <img src="https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Double Chocolate Chip - $4.99</p>
+                <p></p>
+                <a href="#" class="chip">Add to cart</a>
+                <p></p>
+            </div>
+        </div>
 
-        ];
-
-        const catalogGrid = document.getElementById("catalog-grid");
-    
-        catalogData.forEach((item) =>{
-            const card = document.createElement("div")
-            card.className = "card";
-            
-            const image = document.createElement("img");
-            image.src = item.image;
-            image.alt = "cookie";
-
-            const cardContent = document.createElement("div")
-            cardContent.className = "card-content";
-
-            const title = document.createElement("p");
-            title.className = "title";
-            title.textContent = `${item.name} - $${item.price}`
-
-
-            const chip = document.createElement("a");
-            chip.className = "chip";
-            chip.textContent = "Add to Cart";
-            chip.addEventListener("click", () => {
-            //    Cart Logic
-            });
-
-            cardContent.appendChild(title);
-            cardContent.appendChild(chip);
-
-            card.appendChild(image);
-            card.appendChild(cardContent);
-
-            catalogGrid.appendChild(card);
-
-        })
-      </script>
-    </body>
-    </html>
-    
+        <!-- Snickerdoodle -->
+        <div class="card">
+            <img src="https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg"
+                alt="cookie">
+            <div class="card-content">
+                <p class="title">Snickerdoodle - $6.99</p>
+                <p></p>
+                <a href="#" class="chip">Add to cart</a>
+                <p></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
