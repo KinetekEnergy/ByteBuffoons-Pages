@@ -1,3 +1,5 @@
+# <https://kinetekenergy.github.io/ByteBuffoons-Pages/>
+
 # IMPORTANT
 
 - Go to settings and configure pages, deploy from the branch, and then select the root folder. IF YOU DO NOT DO THIS YOUR PAGE WILL NOT BUILD. 
@@ -23,7 +25,6 @@
       - BAD EXAMPLE: 2021-8-2-first-day.ipynb
       - BAD EXAMPLE: first-day.ipynb
       - BAD EXAMPLE: 2069-12-31-First-Day.ipynb
-
 
 ## NIGHTHAWK-Pages CHANGES
 
