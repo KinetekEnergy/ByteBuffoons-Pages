@@ -304,6 +304,7 @@
     <button id="addCookieButton">Add Cookie</button>
 
     <script>
+
         const apiUrl = 'https://bytebufoons.stu.nighthawkcodingsociety.com/api/Cookie/'; // Replace with the actual API URL
 
         // Make an HTTP GET request to the API
@@ -339,13 +340,96 @@
                 Data = organizedData.Cookie_api.CookieAPI.get.data; //data[id].Cookie_name, image whatever u may need,
                 const catalogGrid = document.getElementById("catalog-grid");
                 const cartState={}
-                Data.forEach((item) => {
+                Data.forEach((item, index) => {
+                    const imagePaths =[
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2016/10/halloweencookies-11-350x500.jpg",
+                                "alt": "Pretzel mummies on top of a chocolate chip cookie with orange chips."
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2012/02/pumpkin-cookies-11-350x500.jpg",
+                                "alt": "Two frosted cake mix pumpkin cookies on a white plate, with a bite missing from one cookie."
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2020/10/pumpkincookies-5-350x500.jpg",
+                                "alt": "Pumpkin Cookie broken in half stacked"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2023/09/chocolatecookiesorangecandy-5-350x500.jpg",
+                                "alt": "Chocolate Brownie Cookies on a wire rack filled with orange M&Ms"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2023/05/kitchensinkcookies-5-350x500.jpg",
+                                "alt": "Kitchen Sink Cookies on a cooling rack"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2023/04/lemoncoolercookies-4-350x500.jpg",
+                                "alt": "Lemon Cooler Cookies on a wire cooking rack coated in powdered sugar"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2023/01/nobakepbcookies-6-350x500.jpg",
+                                "alt": "No Bake Cookies scooped and set on a baking sheet"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2023/01/crumblcookiescopycat-9-350x500.jpg",
+                                "alt": "Copycat Crumbl Cookie with milk chocolate chips"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/11/bestchristmascookies-350x500.jpg",
+                                "alt": "Collage of spritz cookies, peanut butter blossoms and gingersnap cookies"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/11/brownsugarcutouts-5-350x500.jpg",
+                                "alt": "Brown sugar cut out sugar cookies stacked on a wire rack"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/11/walnutcookies-6-350x500.jpg",
+                                "alt": "pan banging walnut cookies on a wire rack"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/09/applecidercookies-4-350x500.jpg",
+                                "alt": "Apple Cider Cookies on a cooling rack"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/08/pecancookies-7-350x500.jpg",
+                                "alt": "pecan cookies stacked on a plate"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/07/limeshortbread-6-350x500.jpg",
+                                "alt": "lime shortbread coated in icing stacked on a plate"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/07/toffeechocolatechipcookies-5-350x500.jpg",
+                                "alt": "butter crunch chocolate chip cookies on a wire rack with flaked sea salt"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/03/airfrychocchipcookies-11-350x500.jpg",
+                                "alt": "air fryer chocolate chip cookies on the air fryer rack with parchment paper"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2022/02/saltedchocolatecookies-5-350x500.jpg",
+                                "alt": "Salted crinkle cookies on a wire rack."
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2021/12/gingerbreadsandwichcookies-9-350x500.jpg",
+                                "alt": "Soft Gingerbread Cookie Sandwiches on a plate with Christmas decor"
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2021/05/buttercookies-7-350x500.jpg",
+                                "alt": "Plate of butter cookies with their edges coated with sprinkles."
+                            },
+                            {
+                                "url": "https://cookiesandcups.com/wp-content/uploads/2021/10/chocolatecrinklecookies-6-350x500.jpg",
+                                "alt": "Freshly baked chocolate crinkle cookies on a white tea towel and gingham tablecloth. One of the cookies has been broken in half to reveal the soft interior."
+                            }
+                        ]
+                    
                     const card = document.createElement("div")
                     card.className = "card";
 
                     const image = document.createElement("img");
-                    image.src = item.image;
-                    image.alt = "cookie";
+                    image.src = imagePaths[index].url
+                    image.alt = imagePaths[index].alt
 
                     const cardContent = document.createElement("div")
                     cardContent.className = "card-content";
