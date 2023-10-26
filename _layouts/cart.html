@@ -327,13 +327,28 @@
             </ul>
         </div>
     </nav>
-
     <div id="cartContainer">
         <ul id="cartList" style="list-style-type: none; padding: 0;">
             <!-- Cart items will be dynamically added here -->
         </ul>
     </div>
     </body>
+    
+    <style>
+    /* Style for the Checkout button */
+    #checkoutButton {
+        background-color: #5272F2;
+        color: white;
+        padding: 20px 40px; /* Increase padding to make it bigger */
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        display: block; /* Display the button as a block element */
+        margin: 20px auto; /* Center the button horizontally with margin */
+        cursor: pointer;
+        text-align: center;
+    }
+    </style>
     
     <script>
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
@@ -403,23 +418,19 @@
     totalPriceItem.appendChild(totalPriceLabel);
     totalPriceItem.appendChild(totalPriceValue);
     cartList.appendChild(totalPriceItem);
+    localStorage.setItem("price", JSON.stringify(totalPriceItem));
     
     // Add the "Checkout" button
     const checkoutButton = document.createElement("button");
     checkoutButton.textContent = "Checkout";
-    checkoutButton.style.backgroundColor = "#5272F2";
-    checkoutButton.style.color = "white";
-    checkoutButton.style.padding = "10px 20px";
-    checkoutButton.style.border = "none";
-    checkoutButton.style.borderRadius = "5px";
-    checkoutButton.style.fontWeight = "bold";
-    checkoutButton.style.marginTop = "10px"; // Add some margin at the top
+    checkoutButton.id = "checkoutButton"; // Set the button's ID
     checkoutButton.addEventListener("click", () => {
         // Add the link to your checkout page
-        window.location.href = "/checkout"; // Replace "/checkout" with the actual URL
+        window.location.href = "{{site.baseurl}}/checkout"; // Replace "/checkout" with the actual URL
     });
     
     cartList.appendChild(checkoutButton);
     </script>
     </html>
+    
     
