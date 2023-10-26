@@ -327,83 +327,61 @@
         </div>
     </nav>
 
-    <!-- catalog text & filters -->
-    <div class="container">
-        <h1 class="left">Cart</h1>
+    <div id="cartContainer">
+        <ul id="cartList" style="list-style-type: none; padding: 0;">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
     </div>
-    <hr style="margin-bottom: 2%; margin-top: 2%;">
-
-    <!-- items -->
-    <div class="grid">
-        <!-- Chocolate chip -->
-        <div class="card" style="grid-column: 1; grid-row: 1;">
-            <img src="https://www.cookingclassy.com/wp-content/uploads/2014/06/chocolate-chip-cookie-16.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Chocolate Chip</p>
-                <p class="price">$3.99</p>
-            </div>
-        </div>
-
-        <!-- Double chocolate -->
-        <div class="card" style="grid-column: 1; grid-row: 2;">
-            <img src="https://stylesweet.com/wp-content/uploads/2022/08/DoubleChocolateChipCookies_featured.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Double Chocolate Chip</p>
-                <p class="price">$4.99</p>
-            </div>
-        </div>
-
-        <!-- Snickerdoodle -->
-        <div class="card" style="grid-column: 1; grid-row: 3;">
-            <img src="https://cakemehometonight.com/wp-content/uploads/2021/12/Snickerdoodle-Cookies-FI.jpg"
-                alt="cookie">
-            <div class="card-content">
-                <p class="title">Snickerdoodle</p>
-                <p class="price">$6.99</p>
-            </div>
-        </div>
-
-
-        <div class="grid">
-            <!-- Loop through the fakeCartData to create cart items -->
-            <div id="cart-items">
-              <!-- JavaScript will add items here -->
-            </div>
-          
-            <!-- Cart Summary -->
-            <div id="cart-summary">
-              <p>Total: <span id="cart-total"></span></p>
-            </div>
-          </div>
-        
     </div>
 </body>
 
 <script>
+// Fetch cart from LocalStorage
+const cart = JSON.parse(localStorage.getItem("cart")) || {};
+const cartList = document.getElementById("cartList");
+let totalQuantity = 0; // Initialize total quantity
 
-    const fakeCartData = [
-        { name: "Chocolate Chip", price: 3.99, quantity: 2 },
-        { name: "Double Chocolate Chip", price: 4.99, quantity: 1 },
-        { name: "Snickerdoodle", price: 6.99, quantity: 3 },
-    ];
+// Iterate through the cart items and add them to the list
+for (const [product, quantity] of Object.entries(cart)) {
+    const cartItem = document.createElement("li");
+    cartItem.style.display = "flex";
+    cartItem.style.justifyContent = "space-between";
+    cartItem.style.padding = "10px 0";
+    cartItem.style.borderBottom = "1px solid #E6E6E6";
 
-    const cookieSummary = fakeCartData.map(item => {
-    const total = item.price * item.quantity;
-        return `${item.quantity} ${item.name}(s) - Total Price: $${total.toFixed(2)}`;
-    });
+    const itemName = document.createElement("span");
+    itemName.style.fontWeight = "bold";
+    itemName.textContent = product;
 
-    console.log(cookieSummary);
-    
+    const itemQuantity = document.createElement("span");
+    itemQuantity.textContent = `Quantity: ${quantity}`;
+    totalQuantity += quantity; // Update total quantity
 
-//    window.SnipcartSettings = {
-//         publicApiKey: 'NzFjYjkzMDAtMzFmYy00NThhLTg2YTktNjgwN2ExYTJmMzk5NjM4MzMwMzQyMjk0MTIzNDU1',
-//         loadStrategy: 'on-user-interaction',
-//             templatesUrl: "/snipcart-templates.html",
-//     };
+    cartItem.appendChild(itemName);
+    cartItem.appendChild(itemQuantity);
+    cartList.appendChild(cartItem);
+}
 
-//     (() => { var c, d; (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0"); var s, S; (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750); var l, p; (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com"); var w, u; (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https"); var f = window.SnipcartSettings.version.includes("v3.0.0-ci") || window.SnipcartSettings.version != "3.0" && window.SnipcartSettings.version.localeCompare("3.4.0", void 0, { numeric: !0, sensitivity: "base" }) === -1, m = ["focus", "mouseover", "touchmove", "scroll", "keydown"]; window.LoadSnipcart = o; document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r(); function r() { window.SnipcartSettings.loadStrategy ? window.SnipcartSettings.loadStrategy === "on-user-interaction" && (m.forEach(t => document.addEventListener(t, o)), setTimeout(o, window.SnipcartSettings.timeoutDuration)) : o() } var a = !1; function o() { if (a) return; a = !0; let t = document.getElementsByTagName("head")[0], e = document.querySelector("#snipcart"), i = document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`), n = document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`); e || (e = document.createElement("div"), e.id = "snipcart", e.setAttribute("hidden", "true"), document.body.appendChild(e)), v(e), i || (i = document.createElement("script"), i.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`, i.async = !0, t.appendChild(i)), n || (n = document.createElement("link"), n.rel = "stylesheet", n.type = "text/css", n.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`, t.prepend(n)), m.forEach(g => document.removeEventListener(g, o)) } function v(t) { !f || (t.dataset.apiKey = window.SnipcartSettings.publicApiKey, window.SnipcartSettings.addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings.addProductBehavior), window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle), window.SnipcartSettings.currency && (t.dataset.currency = window.SnipcartSettings.currency), window.SnipcartSettings.templatesUrl && (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl)) } })();
+// Display the total quantity at the end of the cart list
+const totalQuantityItem = document.createElement("li");
+totalQuantityItem.style.display = "flex";
+totalQuantityItem.style.justifyContent = "space-between";
+totalQuantityItem.style.padding = "10px 0";
+totalQuantityItem.style.borderBottom = "1px solid #E6E6E6";
+
+const totalLabel = document.createElement("span");
+totalLabel.style.fontWeight = "bold";
+totalLabel.textContent = "Total Quantity:";
+
+const totalValue = document.createElement("span");
+totalValue.textContent = totalQuantity;
+
+totalQuantityItem.appendChild(totalLabel);
+totalQuantityItem.appendChild(totalValue);
+cartList.appendChild(totalQuantityItem);
+
+
+
 // </script>
 
 </html>
