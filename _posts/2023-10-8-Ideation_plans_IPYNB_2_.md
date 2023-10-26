@@ -3,8 +3,8 @@ toc: True
 comments: False
 layout: post
 title: Ideation Plan
-type: hacks
-courses: {'csp': {'week': 7}}
+type: plans
+courses: {'compsci': {'week': 0}}
 ---
 
 <!-- 

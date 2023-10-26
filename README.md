@@ -26,7 +26,6 @@
       - BAD EXAMPLE: first-day.ipynb
       - BAD EXAMPLE: 2069-12-31-First-Day.ipynb
 
-
 ## NIGHTHAWK-Pages CHANGES
 
 ### NEW FOR NIGHTHAWK-Pages - TAGS

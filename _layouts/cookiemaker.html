@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Newsreader">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
 
-    .logo {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Newsreader">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .logo {
             padding-left: 6rem;
             font-weight: bold;
             font-family: "Outfit";
@@ -103,95 +104,88 @@
             }
         }
 
+        #cookie-container {
+            margin-top: 50px;
+        }
 
-    #cookie-container {
-      margin-top: 50px;
-    }
+        #cookie {
+            width: 200px;
+            height: 200px;
+            background-color: #E1B382;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+        }
 
-    #cookie {
-      width: 200px;
-      height: 200px;
-      background-color: #e1b382;
-      border-radius: 50%;
-      position: relative;
-      display: inline-block;
-    }
+        #base-options,
+        #topping-options {
+            margin-top: 20px;
+        }
 
-    #base-options, #topping-options {
-      margin-top: 20px;
-    }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
 
-    select {
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    #swap-button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
-  <title>Cookie Customization</title>
+        #swap-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Cookie Customization</title>
 </head>
+
 <body>
-  <nav>
-    <div class="nav-div">
-      <h1 class="logo">Chrissie's</h1>
-      <ul class="nav-links">
-        <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
-        <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
-        <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
-      </ul>
+    <nav>
+        <div class="nav-div">
+            <h1 class="logo">Chrissie's</h1>
+            <ul class="nav-links">
+                <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
+                <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
+                <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Cookie Customization</h1>
+    <div id="cookie-container">
+        <div>
+            <img id="cookie-image"
+                src="https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=" />
+        </div>
     </div>
-  </nav>
-
-  <h1>Cookie Customization</h1>
-
-  <div id="cookie-container">
-    <div>
-      <img id="cookie-image" src="https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=" />
+    <div id="base-options">
+        <label for="base">Choose Base:</label>
+        <select id="base">
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="strawberry">Strawberry</option>
+        </select>
     </div>
-  </div>
-
-  <div id="base-options">
-    <label for="base">Choose Base:</label>
-    <select id="base">
-      <option value="chocolate">Chocolate</option>
-      <option value="vanilla">Vanilla</option>
-      <option value="strawberry">Strawberry</option>
-    </select>
-  </div>
-
-  <div id="topping-options">
-    <label for="topping">Choose Topping:</label>
-    <select id="topping">
-      <option value="sprinkles">Sprinkles</option>
-      <option value="chocolate-chips">Chocolate Chips</option>
-      <option value="nuts">Nuts</option>
-    </select>
-  </div>
-
-  <button id="swap-button" onclick="swapOptions()">Swap Options</button>
-
-  <script>
+    <div id="topping-options">
+        <label for="topping">Choose Topping:</label>
+        <select id="topping">
+            <option value="sprinkles">Sprinkles</option>
+            <option value="chocolate-chips">Chocolate Chips</option>
+            <option value="nuts">Nuts</option>
+        </select>
+    </div>
+    <button id="swap-button" onclick="swapOptions()">Swap Options</button>
+    <script>
     function swapOptions() {
       const baseSelect = document.getElementById('base');
       const toppingSelect = document.getElementById('topping');
       const cookieImage = document.getElementById('cookie-image');
-
       // Swap base and topping options
       const temp = baseSelect.value;
       baseSelect.value = toppingSelect.value;
       toppingSelect.value = temp;
-
       // Update cookie image source
       const base = baseSelect.value;
       const newImageUrl = getCookieImageURL(base);
       cookieImage.src = newImageUrl;
     }
-
     function getCookieImageURL(base) {
       // Define image URLs based on the selected base
       const imageUrls = {
@@ -199,10 +193,10 @@
         'vanilla': 'https://media.istockphoto.com/id/468606656/photo/single-traditional-round-butter-biscuit-from-above.jpg?s=612x612&w=0&k=20&c=e07Z20CkUnMbobg5U2FTJU9X6yYYDvQHJpzT1h-gXdw=',
         'strawberry': 'https://sugarspunrun.com/wp-content/uploads/2023/05/Strawberry-Cookies-8-of-8.jpg',
       };
-
       // Return the corresponding image URL
       return imageUrls[base] || 'default_image_url.jpg';
     }
-  </script>
+    </script>
 </body>
+
 </html>
