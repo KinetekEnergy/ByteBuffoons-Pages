@@ -11,8 +11,9 @@
     <style>
         /* NAVIGATION */
         body {
-            padding: 0;
             margin: 0;
+            padding: 0;
+            padding-top: 0; /* You can specify other padding values as needed */
         }
 
         .logo {
@@ -332,56 +333,93 @@
             <!-- Cart items will be dynamically added here -->
         </ul>
     </div>
-    </div>
-</body>
-
-<script>
-// Fetch cart from LocalStorage
-const cart = JSON.parse(localStorage.getItem("cart")) || {};
-const cartList = document.getElementById("cartList");
-let totalQuantity = 0; // Initialize total quantity
-
-// Iterate through the cart items and add them to the list
-for (const [product, quantity] of Object.entries(cart)) {
-    const cartItem = document.createElement("li");
-    cartItem.style.display = "flex";
-    cartItem.style.justifyContent = "space-between";
-    cartItem.style.padding = "10px 0";
-    cartItem.style.borderBottom = "1px solid #E6E6E6";
-
-    const itemName = document.createElement("span");
-    itemName.style.fontWeight = "bold";
-    itemName.textContent = product;
-
-    const itemQuantity = document.createElement("span");
-    itemQuantity.textContent = `Quantity: ${quantity}`;
-    totalQuantity += quantity; // Update total quantity
-
-    cartItem.appendChild(itemName);
-    cartItem.appendChild(itemQuantity);
-    cartList.appendChild(cartItem);
-}
-
-// Display the total quantity at the end of the cart list
-const totalQuantityItem = document.createElement("li");
-totalQuantityItem.style.display = "flex";
-totalQuantityItem.style.justifyContent = "space-between";
-totalQuantityItem.style.padding = "10px 0";
-totalQuantityItem.style.borderBottom = "1px solid #E6E6E6";
-
-const totalLabel = document.createElement("span");
-totalLabel.style.fontWeight = "bold";
-totalLabel.textContent = "Total Quantity:";
-
-const totalValue = document.createElement("span");
-totalValue.textContent = totalQuantity;
-
-totalQuantityItem.appendChild(totalLabel);
-totalQuantityItem.appendChild(totalValue);
-cartList.appendChild(totalQuantityItem);
-
-
-
-// </script>
-
-</html>
+    </body>
+    
+    <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    const cartList = document.getElementById("cartList");
+    let totalQuantity = 0; // Initialize total quantity
+    let totalPrice = 0; // Initialize total price
+    
+    // Iterate through the cart items and add them to the list
+    for (const [product, quantity] of Object.entries(cart)) {
+        const cartItem = document.createElement("li");
+        cartItem.style.display = "flex";
+        cartItem.style.justifyContent = "space-between";
+        cartItem.style.padding = "10px 0";
+        cartItem.style.borderBottom = "1px solid #E6E6E6";
+    
+        const itemName = document.createElement("span");
+        itemName.style.fontWeight = "bold";
+        itemName.textContent = product;
+    
+        const itemQuantity = document.createElement("span");
+        itemQuantity.textContent = `Quantity: ${quantity}`;
+        totalQuantity += quantity; // Update total quantity
+    
+        const itemPrice = document.createElement("span");
+        const itemPriceValue = 2.00 * quantity; // Calculate price for this item
+        itemPrice.textContent = `Price: $${itemPriceValue.toFixed(2)}`;
+        totalPrice += itemPriceValue; // Update total price
+    
+        cartItem.appendChild(itemName);
+        cartItem.appendChild(itemQuantity);
+        cartItem.appendChild(itemPrice);
+        cartList.appendChild(cartItem);
+    }
+    
+    // Display the total quantity at the end of the cart list
+    const totalQuantityItem = document.createElement("li");
+    totalQuantityItem.style.display = "flex";
+    totalQuantityItem.style.justifyContent = "space-between";
+    totalQuantityItem.style.padding = "10px 0";
+    totalQuantityItem.style.borderBottom = "1px solid #E6E6E6";
+    
+    const totalQuantityLabel = document.createElement("span");
+    totalQuantityLabel.style.fontWeight = "bold";
+    totalQuantityLabel.textContent = "Total Quantity:";
+    
+    const totalQuantityValue = document.createElement("span");
+    totalQuantityValue.textContent = totalQuantity;
+    
+    totalQuantityItem.appendChild(totalQuantityLabel);
+    totalQuantityItem.appendChild(totalQuantityValue);
+    cartList.appendChild(totalQuantityItem);
+    
+    // Display the total price at the end of the cart list
+    const totalPriceItem = document.createElement("li");
+    totalPriceItem.style.display = "flex";
+    totalPriceItem.style.justifyContent = "space-between";
+    totalPriceItem.style.padding = "10px 0";
+    totalPriceItem.style.borderBottom = "1px solid #E6E6E6";
+    
+    const totalPriceLabel = document.createElement("span");
+    totalPriceLabel.style.fontWeight = "bold";
+    totalPriceLabel.textContent = "Total Price:";
+    
+    const totalPriceValue = document.createElement("span");
+    totalPriceValue.textContent = `$${totalPrice.toFixed(2)}`;
+    
+    totalPriceItem.appendChild(totalPriceLabel);
+    totalPriceItem.appendChild(totalPriceValue);
+    cartList.appendChild(totalPriceItem);
+    
+    // Add the "Checkout" button
+    const checkoutButton = document.createElement("button");
+    checkoutButton.textContent = "Checkout";
+    checkoutButton.style.backgroundColor = "#5272F2";
+    checkoutButton.style.color = "white";
+    checkoutButton.style.padding = "10px 20px";
+    checkoutButton.style.border = "none";
+    checkoutButton.style.borderRadius = "5px";
+    checkoutButton.style.fontWeight = "bold";
+    checkoutButton.style.marginTop = "10px"; // Add some margin at the top
+    checkoutButton.addEventListener("click", () => {
+        // Add the link to your checkout page
+        window.location.href = "/checkout"; // Replace "/checkout" with the actual URL
+    });
+    
+    cartList.appendChild(checkoutButton);
+    </script>
+    </html>
+    
