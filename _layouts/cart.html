@@ -7,13 +7,35 @@
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Font Family */
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Info bar */
+        .info-bar {
+            background-color: #555843;
+            width: 100%;
+            text-align: center;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-text {
+            font-weight: 600;
+            font-family: "Outfit";
+            color: white;
+            margin: 0;
+        }
+
         /* NAVIGATION */
         body {
-            margin: 0;
             padding: 0;
-            padding-top: 0; /* You can specify other padding values as needed */
+            margin: 0;
         }
 
         .logo {
@@ -34,7 +56,7 @@
             justify-content: space-between;
             z-index: 100;
             background-color: white;
-                    }
+        }
 
         .nav-div {
             display: flex;
@@ -92,20 +114,11 @@
                 width: 100%;
             }
 
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-            }
-
             .nav-div {
                 position: relative;
             }
-
-            .nav-button {
-                display: block;
-                cursor: pointer;
-            }
         }
+
         .info-bar {
             background-color: #555843;
             width: 100%;
@@ -115,67 +128,12 @@
             justify-content: center;
             align-items: center;
         }
-        
-        .info-text {
-            font-weight: 600;
-            font-family: "Outfit";
-            color: white;
-            margin: 0;
-        }
 
-        body {
-            margin: 0;
-            margin-top: 0;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
+        @media (min-width: 769px) {
 
-        nav {
-            width: 100%;
-            list-style: none;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 10px;
-            padding-top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 100;
-            background-color: white;
-        }
+            /* New styles for the hero section */
 
-        .nav-div {
-            display: flex; 
-            align-items: center;
-        }
-        
-        .nav-links a {
-            font-size: 85%;
-            text-decoration: none;
-            color: gray;
-            font-weight: 400;
-            font-family: "Outfit";
-            line-height: 0.8;
-            transition: text-decoration 0.2s;
-        }
-        
-        /* Remove the hover effect to keep the links always gray */
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .nav-links li {
-            display: inline-block;
-            margin-left: 25px;
-            font-size: 125%;
-        }
-
-        .cart {
-            background-color: #5876c3;
-            border-radius: 5px;
-            color: white;
+            /* Add keyframes animation */
         }
 
         .active {
@@ -183,131 +141,22 @@
             text-decoration: underline;
         }
 
-        /* Catalog text */
-        h1 {
-            font-family: 'Newsreader', sans-serif;
-            font-size: 500%;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        /* the divider */
-        hr {
-            color: #E6E6E6;
-        }
-
-        /* filter buttons*/
-        a.chip {
-            -webkit-appearance: button;
-            -moz-appearance: button;
-            appearance: button;
-
-            text-decoration: none;
-            font-family: 'Inter', serif;
-            font-weight: bolder;
-            color: black;
-            padding: 10px 15px;
-
-            border: 1px solid #C2C2C2;
-            border-radius: 20px;
-
-            margin-left: auto;
-            margin-left: 5px;
-        }
-
-        .chipActive {
-            color: white !important;
-            background-color: #426B1F;
-        }
-
-        /* making the catalog text & filter button aligned */
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .left {
-            text-align: left;
-            padding: 0;
-            margin: 0;
-            margin-bottom: -0.3em;
-        }
-
-        .right {
-            text-align: right;
-            padding: 0;
-            margin: 0;
-        }
-
-        .chipContainer {
-            margin-left: auto;
-        }
-
-        /* catalog items */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            /* Two columns */
-            grid-template-rows: repeat(3, 1fr);
-            grid-gap: 2rem;
-        }
-
-        .card {
-            background-color: #FAFAF5;
-            border: 1px solid #E6E6E6;
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            height: 200px;
-            position: relative;
-            width: 100%;
-            /* Ensure the card takes up the full width of its container */
-        }
-
-        .card img {
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 24px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .card-content {
-            flex: 1;
-            padding: 20px;
-            text-align: right;
-        }
-
-        .title {
-            font-family: 'Inter', serif;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 0;
-        }
-
-        .price {
-            font-family: 'Inter', serif;
-            font-weight: bold;
-            font-size: 20px;
-            color: #426B1F;
-        }
         .logo {
             padding-left: 6rem;
             font-weight: bold;
             font-family: "Outfit";
             font-size: 250%;
         }
+
+        #cartContainer {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
     </style>
 </head>
 
 <body>
+    <!-- banner -->
     <section id="info bar">
         <div class="info-bar">
             <p class="info-text">
@@ -315,111 +164,119 @@
             </p>
         </div>
     </section>
-    
-    
+
+    <!-- navbar -->
     <nav>
         <div class="nav-div">
             <h1 class="logo">Chrissie's</h1>
             <ul class="nav-links">
                 <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
                 <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
-                <li><a href="{{site.baseurl}}/cart" class="cart cart-button">Cart</a></li>
+                <li><a href="{{site.baseurl}}/cookiemaker/">Cookie Maker</a></li>
+                <li><a href="{{site.baseurl}}/cart/" class="cart-button">Cart</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- cart section (the table) -->
     <div id="cartContainer">
         <ul id="cartList" style="list-style-type: none; padding: 0;">
             <!-- Cart items will be dynamically added here -->
         </ul>
     </div>
-    </body>
-    
-    <style>
+</body>
+
+<style>
     /* Style for the Checkout button */
     #checkoutButton {
         background-color: #5272F2;
-        color: white;
-        padding: 20px 40px; /* Increase padding to make it bigger */
+        color: white !important;
+        padding: 10px 20px;
         border: none;
         border-radius: 5px;
         font-weight: bold;
-        display: block; /* Display the button as a block element */
-        margin: 20px auto; /* Center the button horizontally with margin */
+        display: block;
+        /* Display the button as a block element */
+        margin: 20px auto;
+        /* Center the button horizontally with margin */
         cursor: pointer;
         text-align: center;
+        font-size: 110%;
     }
-    </style>
-    
-    <script>
+
+    #cartItem, #totalQuantityItem, #totalPriceItem {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    #itemname {
+        font-weight: bold;
+    }
+</style>
+
+<script>
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
     const cartList = document.getElementById("cartList");
     let totalQuantity = 0; // Initialize total quantity
     let totalPrice = 0; // Initialize total price
-    
+
     // Iterate through the cart items and add them to the list
     for (const [product, quantity] of Object.entries(cart)) {
         const cartItem = document.createElement("li");
-        cartItem.style.display = "flex";
-        cartItem.style.justifyContent = "space-between";
-        cartItem.style.padding = "10px 0";
-        cartItem.style.borderBottom = "1px solid #E6E6E6";
-    
+        cartItem.id = "cartItem";
+
         const itemName = document.createElement("span");
-        itemName.style.fontWeight = "bold";
+        itemName.id = "itemName";
         itemName.textContent = product;
-    
+
         const itemQuantity = document.createElement("span");
         itemQuantity.textContent = `Quantity: ${quantity}`;
         totalQuantity += quantity; // Update total quantity
-    
+
         const itemPrice = document.createElement("span");
         const itemPriceValue = 2.00 * quantity; // Calculate price for this item
         itemPrice.textContent = `Price: $${itemPriceValue.toFixed(2)}`;
         totalPrice += itemPriceValue; // Update total price
-    
+
         cartItem.appendChild(itemName);
         cartItem.appendChild(itemQuantity);
         cartItem.appendChild(itemPrice);
         cartList.appendChild(cartItem);
     }
-    
+
     // Display the total quantity at the end of the cart list
     const totalQuantityItem = document.createElement("li");
-    totalQuantityItem.style.display = "flex";
-    totalQuantityItem.style.justifyContent = "space-between";
-    totalQuantityItem.style.padding = "10px 0";
-    totalQuantityItem.style.borderBottom = "1px solid #E6E6E6";
-    
+    totalQuantityItem.id = "totalQuantityItem"; //id declare
+
     const totalQuantityLabel = document.createElement("span");
     totalQuantityLabel.style.fontWeight = "bold";
     totalQuantityLabel.textContent = "Total Quantity:";
-    
+
     const totalQuantityValue = document.createElement("span");
     totalQuantityValue.textContent = totalQuantity;
-    
+
     totalQuantityItem.appendChild(totalQuantityLabel);
     totalQuantityItem.appendChild(totalQuantityValue);
     cartList.appendChild(totalQuantityItem);
-    
+
     // Display the total price at the end of the cart list
     const totalPriceItem = document.createElement("li");
-    totalPriceItem.style.display = "flex";
-    totalPriceItem.style.justifyContent = "space-between";
-    totalPriceItem.style.padding = "10px 0";
-    totalPriceItem.style.borderBottom = "1px solid #E6E6E6";
-    
+    totalPriceItem.id = "totalPriceItem"; //id declare
+
     const totalPriceLabel = document.createElement("span");
     totalPriceLabel.style.fontWeight = "bold";
     totalPriceLabel.textContent = "Total Price:";
-    
+
     const totalPriceValue = document.createElement("span");
     totalPriceValue.textContent = `$${totalPrice.toFixed(2)}`;
-    
+
     totalPriceItem.appendChild(totalPriceLabel);
     totalPriceItem.appendChild(totalPriceValue);
     cartList.appendChild(totalPriceItem);
     localStorage.setItem("price", JSON.stringify(totalPriceItem));
-    
+
     // Add the "Checkout" button
     const checkoutButton = document.createElement("button");
     checkoutButton.textContent = "Checkout";
@@ -428,9 +285,8 @@
         // Add the link to your checkout page
         window.location.href = "{{site.baseurl}}/checkout"; // Replace "/checkout" with the actual URL
     });
-    
+
     cartList.appendChild(checkoutButton);
-    </script>
-    </html>
-    
-    
+</script>
+
+</html>

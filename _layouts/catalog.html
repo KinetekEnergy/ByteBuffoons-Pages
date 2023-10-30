@@ -12,19 +12,42 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
 
     <style>
+        /* Font Family */
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+    
+        /* Info bar */
+        .info-bar {
+            background-color: #555843;
+            width: 100%;
+            text-align: center;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .info-text {
+            font-weight: 600;
+            font-family: "Outfit";
+            color: white;
+            margin: 0;
+        }
+    
         /* NAVIGATION */
         body {
             padding: 0;
             margin: 0;
         }
-
+    
         .logo {
             padding-left: 6rem;
             font-weight: bold;
             font-family: "Outfit";
             font-size: 250%;
         }
-
+    
         nav {
             width: 100%;
             list-style: none;
@@ -37,12 +60,12 @@
             z-index: 100;
             background-color: white;
         }
-
+    
         .nav-div {
             display: flex;
             align-items: center;
         }
-
+    
         .nav-links a {
             font-size: 85%;
             text-decoration: none;
@@ -52,18 +75,18 @@
             line-height: 0.8;
             transition: text-decoration 0.2s;
         }
-
+    
         /* Remove the hover effect to keep the links always gray */
         .nav-links a:hover {
             text-decoration: underline;
         }
-
+    
         .nav-links li {
             display: inline-block;
             margin-left: 25px;
             font-size: 125%;
         }
-
+    
         /* Cart Button Styling */
         .cart-button {
             background-color: #5272F2;
@@ -77,12 +100,12 @@
             /* Adjust margin to position the Cart button */
             cursor: pointer;
         }
-
+    
         .active {
             font-weight: 800;
             text-decoration: underline;
         }
-
+    
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -93,22 +116,22 @@
                 z-index: 101;
                 width: 100%;
             }
-
+    
             .nav-links.active {
                 display: flex;
                 flex-direction: column;
             }
-
+    
             .nav-div {
                 position: relative;
             }
-
+    
             .nav-button {
                 display: block;
                 cursor: pointer;
             }
         }
-
+    
         .info-bar {
             background-color: #555843;
             width: 100%;
@@ -118,67 +141,129 @@
             justify-content: center;
             align-items: center;
         }
-
-        .info-text {
-            font-weight: 600;
-            font-family: "Outfit";
-            color: white;
-            margin: 0;
+    
+        @media (min-width: 769px) {
+            .menu-button {
+                display: none;
+            }
+    
+            /* New styles for the hero section */
+            .hero-section {
+                background-image: url('../images/plate-with-fresh-cookies-from-oven.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 35rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                flex-direction: column;
+                animation: movingBackground 20s infinite linear;
+                /* Add this line for animation */
+            }
+    
+            /* Add keyframes animation */
+            @keyframes movingBackground {
+                0% {
+                    background-position: 0 0;
+                    /* Start from the top-left corner */
+                }
+    
+                100% {
+                    background-position: 100% 0;
+                    /* Move to the top-right corner */
+                }
+            }
+    
+            .hero-text {
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 20px;
+                font-weight: 800;
+                /* Space between text and button */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Center the button under the text */
+            }
+    
+            a.learn-more-button {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+                text-decoration: none;
+    
+                background-color: #5272F2;
+                /* Button background color */
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+                /* Adjust the top margin as needed */
+            }
+    
+            .next-section {
+                background-color: white;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .next-section h2 {
+                font-size: 36px;
+                /* Adjust the font size as needed */
+                font-weight: bold;
+            }
+    
+            .slogan {
+                font-size: 24px;
+                /* Adjust the font size as needed */
+                margin-top: 20px;
+                /* Space between heading and slogan */
+            }
         }
-
+    
         .active {
             font-weight: 800;
             text-decoration: underline;
         }
-
-        /* Catalog text */
-        h1 {
-            font-family: 'Newsreader', sans-serif;
-            font-size: 500%;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        /* the divider */
-        hr {
-            color: #E6E6E6;
-        }
-
+    
+    
         /* filter buttons*/
         a.chip {
             -webkit-appearance: button;
             -moz-appearance: button;
             appearance: button;
-
+    
             text-decoration: none;
             font-family: 'Inter', serif;
             font-weight: bolder;
             color: black;
             padding: 10px 15px;
-
+    
             border: 1px solid #C2C2C2;
-
+    
             border-radius: 20px;
-
+    
             margin-left: auto;
             margin-left: 5px;
-
+    
             transition-duration: 0.4s;
         }
-
+    
         a.chip:hover {
             color: white !important;
             border: 1px solid rgba(255, 255, 245, 0);
             /* it makes the border go away */
             background-color: #426B1F;
         }
-
+    
         .chipContainer {
             margin-left: auto;
         }
-
+    
         /* catalog items */
         .grid {
             display: grid;
@@ -187,7 +272,7 @@
             grid-gap: 5rem;
             padding: 5rem;
         }
-
+    
         .card {
             background-color: #FAFAF5;
             border: 1px solid #E6E6E6;
@@ -200,7 +285,7 @@
             padding-bottom: 100%;
             position: relative;
         }
-
+    
         .card-content {
             flex: 1;
             display: flex;
@@ -214,21 +299,21 @@
             background-color: rgba(255, 255, 245, 0.5);
             backdrop-filter: blur(5px);
         }
-
+    
         .title {
             font-family: 'Inter', serif;
             font-weight: bold;
             font-size: 20px;
             margin-bottom: 0;
         }
-
+    
         .price {
             font-family: 'Inter', serif;
             font-weight: bold;
             font-size: 20px;
             color: #426B1F;
         }
-
+    
         .card img {
             width: 100%;
             height: 100%;
@@ -238,14 +323,14 @@
             top: 0;
             left: 0;
         }
-
+    
         .logo {
             padding-left: 6rem;
             font-weight: bold;
             font-family: "Outfit";
             font-size: 250%;
         }
-
+    
         .product-card {
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -256,17 +341,16 @@
             text-align: center;
             background-color: #f8f8f8;
         }
-
+    
         .product-title {
             font-size: 1.2em;
         }
-
+    
         .product-price {
             font-weight: bold;
             color: #007bff;
         }
     </style>
-
 </head>
 
 <body>
@@ -279,24 +363,19 @@
         </div>
     </section>
 
-
     <nav>
         <div class="nav-div">
             <h1 class="logo">Chrissie's</h1>
-            <!--             <button class="nav-button" onclick="toggleNavLinks()">☰</button> -->
             <ul class="nav-links">
                 <li><a href="{{site.baseurl}}/cookies/" class="active">Home</a></li>
                 <li><a href="{{site.baseurl}}/catalog/">Catalog</a></li>
                 <li><a href="{{site.baseurl}}/cookiemaker/">Cookie Maker</a></li>
                 <li><a href="{{site.baseurl}}/cart/" class="cart cart-button">Cart</a></li>
-                <!-- {{site.baseurl}}/cart -->
             </ul>
         </div>
     </nav>
 
     <!-- catalog text & filters -->
-
-    <hr style="margin-bottom: 2%; margin-top: 2%;">
 
     <div class="grid" id="catalog-grid"></div>
     <button id="addCookieButton">Add Cookie</button>
