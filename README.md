@@ -1,15 +1,29 @@
-# This repository will be archived before or by 11/3/2023 (this decision is not final and may change)
+# Chrissie's Cookies Frontend
+
 
 
 ### <https://kinetekenergy.github.io/ByteBuffoons-Pages/>
 
 The ByteBuffoons front end repository. Use the link above to open the website.
 
-For backed stuff, see the backend repository under Harkirat's GitHub.
+For backend stuff, see the backend repository under Harkirat's GitHub.
 
-Aashray Reddy, Arushi Pandey, Chrissie Zhou, Harkirat Hattar, Shubhay Choubey.
+## Team Members and Roles
 
-<!--
+- Aashray: Frontend
+- Arushi: Scrum Master
+- Chrissie: DevOps
+- Harkirat: Backend
+- Shubhay: Frontend
+
+## Core Features
+
+- Home: view our asthetically pleasing homescreen with our story at the bottom
+- Catalog: Scroll through our wide selection of cookies
+- Cart: Access your cart to view purchases
+- Checkout: enter your personal information on our eye-catching checkout screen
+
+
 ## IMPORTANT
 
 - Go to settings and configure pages, deploy from the branch, and then select the root folder. IF YOU DO NOT DO THIS YOUR PAGE WILL NOT BUILD. 
@@ -192,4 +206,3 @@ bundle install
 - `_data/compsci.yml` - this contains the supporting data that helps organize the units on the page.
 - `_layouts`\schedule.html - this contains code, in the Liquid language, that generates the HTML for all the rows and columns.
 - fyi, the schedule.html could work for another type of page.  For instance, you could make a csa.md, _data/csa.yml, and tag files with `csa: {week: 0}` under courses.
--->
