@@ -1,3 +1,6 @@
+# This repository will be archived before or by 11/3/2023 at 11:08 AM (this decision is not final and may change)
+
+
 ### <https://kinetekenergy.github.io/ByteBuffoons-Pages/>
 
 ## IMPORTANT
