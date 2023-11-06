@@ -23,6 +23,40 @@ For backend stuff, see the backend repository under Harkirat's GitHub.
 - Cart: Access your cart to view purchases
 - Checkout: enter your personal information on our eye-catching checkout screen
 
+### What is Agile Methedology?
+
+1. **Roles**: Scrum defines specific roles within a project. These include the Product Owner, Scrum Master, and Development Team. The Product Owner is responsible for defining and prioritizing the product backlog, which is a list of features and tasks. The Scrum Master acts as a servant-leader, ensuring that the Scrum process is followed and helping to remove any impediments that may hinder the team's progress. The Development Team is cross-functional and self-organizing, responsible for delivering a potentially shippable product increment at the end of each sprint.
+2. **Artifacts**: Scrum utilizes several key artifacts to facilitate transparency and communication. The Product Backlog is an ordered list of items that represent the product's requirements, features, and enhancements. The Sprint Backlog is a subset of the Product Backlog items selected for a specific sprint. It details the tasks and activities required to complete these items. At the end of each sprint, the team should produce a potentially shippable product increment, which is a tangible outcome of their work.
+3. **Events**: Scrum defines a set of events to structure the work. The most significant event is the Sprint, a time-boxed period (typically 2-4 weeks) during which the Development Team works to complete the selected items from the Sprint Backlog. Daily Scrum meetings are held to foster communication and synchronization within the team. Sprint Planning meetings are held at the beginning of each sprint to determine which items from the Product Backlog will be worked on in the upcoming sprint. Sprint Review and Sprint Retrospective meetings are held at the end of each sprint to review the work done and identify areas for improvement.
+4. **Empirical Process Control**: Scrum is based on empirical process control, which means that decisions are made based on observation and experience rather than on defined processes. This approach allows teams to adapt quickly to changing requirements and circumstances. The framework encourages teams to inspect their work regularly (through daily Scrum meetings and sprint reviews) and adapt accordingly to improve their processes continually.
+5. **Benefits**: Scrum offers several benefits, such as increased flexibility, faster delivery of value to customers, improved communication and collaboration within teams, and enhanced transparency. By breaking work into small, manageable sprints, Scrum allows for frequent inspection and adaptation, reducing the risk of delivering a product that doesn't meet customer needs. It also encourages a culture of continuous improvement, fostering a sense of ownership and accountability among team members.
+In summary, Scrum is an Agile framework that provides a structured approach to project management and product development. It defines roles, artifacts, and events to facilitate transparency, collaboration, and adaptability. By following Scrum principles, teams can work more efficiently, respond to changing requirements, and deliver valuable products that meet customer needs.
+
+### Declaration of Agile Methodology
+
+In Advanced Computer Science, September 14, 2023
+
+The unanimous Declaration of the united Programmers of Cyberspace
+
+When in the Course of human events, it becomes necessary for one development team to adopt the methodologies which have allowed for agile development, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to adopting agile methodology.
+
+We hold these truths to be self-evident, that all developers are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Errors, Warnings and the pursuit of Stable Code.--That to secure these rights, Roles are instituted among Teams, deriving their just powers from the consent of the developers, --That whenever any Form of Mangement becomes destructive of these ends, it is the Right of the Developers to alter or to abolish it, and to institute new Methodologies, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Development Window and Time Until Deployment. Prudence, indeed, will dictate that Methodologies long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that developerkind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Management, and to provide new Methodologies for their future security.--Such has been the patient sufferance of these Developers; and such is now the necessity which constrains them to alter their former Systems of Management. The history of the present Head Manager is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these Developers.
+
+In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Manager whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.
+
+Nor have We been wanting in attentions to our Developer brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our New Methodology, and hold them, as we hold the rest of mankind, Developers in War, in Peace Programmers.
+
+We, therefore, the Developers of the united Programmers of Cyberspace, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Development Teams, solemnly publish and declare, That these United Teams are, and of Right ought to adopt the Agile Methodology; that they are to follow the Agile Manifesto as the basis for development and deployment, and that all  connection between them and former Methodologies, is and ought to be totally dissolved; and that as Free and Agile Teams, they have full Power to levy Commits, conclude Merge Errors, contract Issues, establish Pull Requests, and to do all other Acts and Things which Agile Development Teams may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to do the following:
+
+Uphold individuals and interactions over processes and tools
+
+Create working software over comprehensive documentation
+
+Engage in customer collaboration over contract negotiation
+
+Responding to change over following a plan
+
+And thus we pledge each other our Lives, our Fortunes and our sacred Honor.
 
 ## IMPORTANT
 
